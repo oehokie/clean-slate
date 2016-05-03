@@ -1,4 +1,4 @@
-app.module('app', [])
+app.module('cleanSlate')
     .controller("EligibiltyController", function EligibilityController(
         $scope,
         $http,
