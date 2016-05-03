@@ -1,6 +1,12 @@
-angular.module("cleanSlate", ["ui.router"])
+'use strict';
+
+angular
+  .module('cleanSlate', [
+    'firebase',
+    'angular-md5',
+    'ui.router'
+  ])
     //Config
-    .constant('FirebaseUrl', 'https://http://blazing-torch-1225.firebaseio.com/')
     .config(function ($stateProvider, $urlRouterProvider) {
         "use strict";
 
@@ -91,4 +97,5 @@ angular.module("cleanSlate", ["ui.router"])
             ga.apply(ga, args);
         };
 
-    });
+    })
+    .constant('FirebaseUrl', 'https://http://blazing-torch-1225.firebaseio.com/')
