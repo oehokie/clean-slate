@@ -1,11 +1,11 @@
 'use strict';
 
 angular
-  .module('cleanSlate', [
-    'firebase',
-    'angular-md5',
-    'ui.router'
-  ])
+    .module('cleanSlate', [
+        'firebase',
+        'angular-md5',
+        'ui.router'
+    ])
     //Config
     .config(function ($stateProvider, $urlRouterProvider) {
         // Default location...
@@ -20,12 +20,30 @@ angular
             .state('login', {
                 url: '/login',
                 controller: 'AuthCtrl as authCtrl',
-                templateUrl: 'app/auth/login.html'
+                templateUrl: 'app/auth/login.html',
+                resolve: {
+                    requireNoAuth: function ($state, Auth) {
+                        return Auth.$requireAuth().then(function (auth) {
+                            $state.go('home');
+                        }, function (error) {
+                            return;
+                        });
+                    }
+                }
             })
             .state('register', {
                 url: '/register',
                 controller: 'AuthCtrl as authCtrl',
-                templateUrl: 'app/auth/register.html'
+                templateUrl: 'app/auth/register.html',
+                resolve: {
+                    requireNoAuth: function ($state, Auth) {
+                        return Auth.$requireAuth().then(function (auth) {
+                            $state.go('home');
+                        }, function (error) {
+                            return;
+                        });
+                    }
+                }
             })
             .state("acquire", {
                 url: "/acquire",
