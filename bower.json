@@ -11,6 +11,11 @@
     "angularfire": "~1.1.0",
     "angular-ui-router": "~0.2.14",
     "angular-md5": "~0.1.7",
-    "lodash": "^4.11.2"
+    "lodash": "^4.11.2",
+    "font-awesome": "^4.6.1",
+    "bootswatch": "^3.3.6+1"
+  },
+  "resolutions": {
+    "bootstrap": "3.3.4"
   }
 }
