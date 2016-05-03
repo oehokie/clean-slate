@@ -24,7 +24,7 @@ angular
                 resolve: {
                     requireNoAuth: function ($state, Auth) {
                         return Auth.$requireAuth().then(function (auth) {
-                            $state.go('home');
+                            $state.go('login');
                         }, function (error) {
                             return;
                         });
@@ -38,7 +38,7 @@ angular
             //     resolve: {
             //         requireNoAuth: function ($state, Auth) {
             //             return Auth.$requireAuth().then(function (auth) {
-            //                 $state.go('home');
+            //                 $state.go('login');
             //             }, function (error) {
             //                 return;
             //             });
@@ -77,6 +77,83 @@ angular
             .state("contact", {
                 url: "/contact",
                 templateUrl: "app/contact/contact.html"
+            })
+            .state("admin", {
+                url: "/admin",
+                templateUrl: "app/admin/home.html",
+                resolve: {
+                    auth: function ($state, Auth) {
+                        return Auth.$requireAuth().catch(function () {
+                            $state.go('login');
+                        });
+                    }
+                }
+            })
+            .state("admin.reports", {
+                url: "/admin/reports",
+                templateUrl: "app/admin/reports.html",
+                resolve: {
+                    auth: function ($state, Auth) {
+                        return Auth.$requireAuth().catch(function () {
+                            $state.go('login');
+                        });
+                    }
+                }
+            })
+            .state("admin.questions", {
+                url: "/admin/questions",
+                templateUrl: "app/admin/questions.html",
+                resolve: {
+                    auth: function ($state, Auth) {
+                        return Auth.$requireAuth().catch(function () {
+                            $state.go('login');
+                        });
+                    }
+                }
+            })
+            .state("admin.edit", {
+                url: "/admin/question/:questionId",
+                templateUrl: "app/admin/edit.html",
+                resolve: {
+                    auth: function ($state, Auth) {
+                        return Auth.$requireAuth().catch(function () {
+                            $state.go('login');
+                        });
+                    }
+                }
+            })
+            .state("admin.partners", {
+                url: "/admin/partners",
+                templateUrl: "app/admin/partners.html",
+                resolve: {
+                    auth: function ($state, Auth) {
+                        return Auth.$requireAuth().catch(function () {
+                            $state.go('login');
+                        });
+                    }
+                }
+            })
+            .state("admin.motions", {
+                url: "/admin/motions",
+                templateUrl: "app/admin/motions.html",
+                resolve: {
+                    auth: function ($state, Auth) {
+                        return Auth.$requireAuth().catch(function () {
+                            $state.go('login');
+                        });
+                    }
+                }
+            })
+            .state("admin.feedback", {
+                url: "/admin/feedback",
+                templateUrl: "app/admin/feedback.html",
+                resolve: {
+                    auth: function ($state, Auth) {
+                        return Auth.$requireAuth().catch(function () {
+                            $state.go('login');
+                        });
+                    }
+                }
             });
     })
     .run(function ($rootScope, $location, Analytics) {

@@ -15,14 +15,14 @@
 
         </thead>
         <tbody>
-            <tr ng-repeat="x in questions | filter:test | orderBy: 'questionID'">
+            <tr ng-repeat="question in questions | filter:test | orderBy: 'questionID'">
                 <td>
                     <button class="btn btn-success" data-ng-click="showQuestion(x)" <span class='glyphicon glyphicon-pencil'></span> Edit </button>
                 </td>
-                <td>{{ x.questionID }}</td>
-                <td>{{ x.questionText }}</td>
-                <td>{{ x.helperText | uppercase }}</td>
-                <td>{{ x.Section }}</td>
+                <td>{{ question.questionID }}</td>
+                <td>{{ question.questionText }}</td>
+                <td>{{ question.helperText | uppercase }}</td>
+                <td>{{ question.Section }}</td>
             </tr>
         </tbody>
     </table>

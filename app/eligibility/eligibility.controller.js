@@ -1,5 +1,5 @@
 angular.module('cleanSlate')
-    .controller("EligibiltyController", function EligibilityController(
+    .controller("EligibiltyController", function (
         $scope,
         $http,
         $window,
