@@ -19,8 +19,8 @@ angular
             })
             .state('login', {
                 url: '/login',
-                controller: 'AuthCtrl',
-                controllerAs: 'authCtrl',
+                // controller: 'AuthCtrl',
+                // controllerAs: 'authCtrl',
                 templateUrl: 'app/auth/login.html'
                 // ,
                 // resolve: {
