@@ -19,143 +19,141 @@ angular
             })
             .state('login', {
                 url: '/login',
-                // controller: 'AuthCtrl',
-                // controllerAs: 'authCtrl',
-                templateUrl: 'app/auth/login.html'
-                // ,
-                // resolve: {
-                //     requireNoAuth: function ($state, Auth) {
-                //         return Auth.$requireAuth().then(function (auth) {
-                //             $state.go('login');
-                //         }, function (error) {
-                //             return;
-                //         });
-                //     }
-                // }
-            // })
-            // // .state('register', {
-            // //     url: '/register',
-            // //     controller: 'AuthCtrl as authCtrl',
-            // //     templateUrl: 'app/auth/register.html',
-            // //     resolve: {
-            // //         requireNoAuth: function ($state, Auth) {
-            // //             return Auth.$requireAuth().then(function (auth) {
-            // //                 $state.go('login');
-            // //             }, function (error) {
-            // //                 return;
-            // //             });
-            // //         }
-            // //     }
-            // // })
-            // .state("acquire", {
-            //     url: "/acquire",
-            //     templateUrl: "app/acquire/acquire.html"
-            // })
-            // .state("acquire-in-person", {
-            //     url: "/acquire-in-person",
-            //     templateUrl: "app/acquire-in-person/acquire-in-person.html"
-            // })
-            // .state("legal", {
-            //     url: "/legal",
-            //     templateUrl: "app/legal/legal.html"
-            // })
-            // .state("eligibility", {
-            //     url: "/eligibility/:questionId",
-            //     templateUrl: "app/eligibility/eligibility.html",
-            //     controller: "EligibiltyController"
-            // })
-            // .state("faqs", {
-            //     url: "/faqs",
-            //     templateUrl: "app/faqs/faqs.html"
-            // })
-            // .state("definitions", {
-            //     url: "/definitions",
-            //     templateUrl: "app/definitions/definitions.html"
-            // })
-            // .state("screener", {
-            //     url: "/screener",
-            //     templateUrl: "app/screener/screener.html"
-            // })
-            // .state("contact", {
-            //     url: "/contact",
-            //     templateUrl: "app/contact/contact.html"
-            // })
-            // .state("admin", {
-            //     url: "/admin",
-            //     templateUrl: "app/admin/home.html",
+                controller: 'AuthCtrl as authCtrl',
+                templateUrl: 'app/auth/login.html',
+                resolve: {
+                    requireNoAuth: function ($state, Auth) {
+                        return Auth.$requireAuth().then(function (auth) {
+                            $state.go('login');
+                        }, function (error) {
+                            return;
+                        });
+                    }
+                }
+            })
+            // .state('register', {
+            //     url: '/register',
+            //     controller: 'AuthCtrl as authCtrl',
+            //     templateUrl: 'app/auth/register.html',
             //     resolve: {
-            //         auth: function ($state, Auth) {
-            //             return Auth.$requireAuth().catch(function () {
+            //         requireNoAuth: function ($state, Auth) {
+            //             return Auth.$requireAuth().then(function (auth) {
             //                 $state.go('login');
+            //             }, function (error) {
+            //                 return;
             //             });
             //         }
             //     }
             // })
-            // .state("admin.reports", {
-            //     url: "/admin/reports",
-            //     templateUrl: "app/admin/reports.html",
-            //     resolve: {
-            //         auth: function ($state, Auth) {
-            //             return Auth.$requireAuth().catch(function () {
-            //                 $state.go('login');
-            //             });
-            //         }
-            //     }
-            // })
-            // .state("admin.questions", {
-            //     url: "/admin/questions",
-            //     templateUrl: "app/admin/questions.html",
-            //     resolve: {
-            //         auth: function ($state, Auth) {
-            //             return Auth.$requireAuth().catch(function () {
-            //                 $state.go('login');
-            //             });
-            //         }
-            //     }
-            // })
-            // .state("admin.edit", {
-            //     url: "/admin/question/:questionId",
-            //     templateUrl: "app/admin/edit.html",
-            //     resolve: {
-            //         auth: function ($state, Auth) {
-            //             return Auth.$requireAuth().catch(function () {
-            //                 $state.go('login');
-            //             });
-            //         }
-            //     }
-            // })
-            // .state("admin.partners", {
-            //     url: "/admin/partners",
-            //     templateUrl: "app/admin/partners.html",
-            //     resolve: {
-            //         auth: function ($state, Auth) {
-            //             return Auth.$requireAuth().catch(function () {
-            //                 $state.go('login');
-            //             });
-            //         }
-            //     }
-            // })
-            // .state("admin.motions", {
-            //     url: "/admin/motions",
-            //     templateUrl: "app/admin/motions.html",
-            //     resolve: {
-            //         auth: function ($state, Auth) {
-            //             return Auth.$requireAuth().catch(function () {
-            //                 $state.go('login');
-            //             });
-            //         }
-            //     }
-            // })
-            // .state("admin.feedback", {
-            //     url: "/admin/feedback",
-            //     templateUrl: "app/admin/feedback.html",
-            //     resolve: {
-            //         auth: function ($state, Auth) {
-            //             return Auth.$requireAuth().catch(function () {
-            //                 $state.go('login');
-            //             });
-            //         }
-            //     }
+            .state("acquire", {
+                url: "/acquire",
+                templateUrl: "app/acquire/acquire.html"
+            })
+            .state("acquire-in-person", {
+                url: "/acquire-in-person",
+                templateUrl: "app/acquire-in-person/acquire-in-person.html"
+            })
+            .state("legal", {
+                url: "/legal",
+                templateUrl: "app/legal/legal.html"
+            })
+            .state("eligibility", {
+                url: "/eligibility/:questionId",
+                templateUrl: "app/eligibility/eligibility.html",
+                controller: "EligibiltyController"
+            })
+            .state("faqs", {
+                url: "/faqs",
+                templateUrl: "app/faqs/faqs.html"
+            })
+            .state("definitions", {
+                url: "/definitions",
+                templateUrl: "app/definitions/definitions.html"
+            })
+            .state("screener", {
+                url: "/screener",
+                templateUrl: "app/screener/screener.html"
+            })
+            .state("contact", {
+                url: "/contact",
+                templateUrl: "app/contact/contact.html"
+            })
+            .state("admin", {
+                url: "/admin",
+                templateUrl: "app/admin/home.html",
+                resolve: {
+                    auth: function ($state, Auth) {
+                        return Auth.$requireAuth().catch(function () {
+                            $state.go('login');
+                        });
+                    }
+                }
+            })
+            .state("admin.reports", {
+                url: "/admin/reports",
+                templateUrl: "app/admin/reports.html",
+                resolve: {
+                    auth: function ($state, Auth) {
+                        return Auth.$requireAuth().catch(function () {
+                            $state.go('login');
+                        });
+                    }
+                }
+            })
+            .state("admin.questions", {
+                url: "/admin/questions",
+                templateUrl: "app/admin/questions.html",
+                resolve: {
+                    auth: function ($state, Auth) {
+                        return Auth.$requireAuth().catch(function () {
+                            $state.go('login');
+                        });
+                    }
+                }
+            })
+            .state("admin.edit", {
+                url: "/admin/question/:questionId",
+                templateUrl: "app/admin/edit.html",
+                resolve: {
+                    auth: function ($state, Auth) {
+                        return Auth.$requireAuth().catch(function () {
+                            $state.go('login');
+                        });
+                    }
+                }
+            })
+            .state("admin.partners", {
+                url: "/admin/partners",
+                templateUrl: "app/admin/partners.html",
+                resolve: {
+                    auth: function ($state, Auth) {
+                        return Auth.$requireAuth().catch(function () {
+                            $state.go('login');
+                        });
+                    }
+                }
+            })
+            .state("admin.motions", {
+                url: "/admin/motions",
+                templateUrl: "app/admin/motions.html",
+                resolve: {
+                    auth: function ($state, Auth) {
+                        return Auth.$requireAuth().catch(function () {
+                            $state.go('login');
+                        });
+                    }
+                }
+            })
+            .state("admin.feedback", {
+                url: "/admin/feedback",
+                templateUrl: "app/admin/feedback.html",
+                resolve: {
+                    auth: function ($state, Auth) {
+                        return Auth.$requireAuth().catch(function () {
+                            $state.go('login');
+                        });
+                    }
+                }
             });
     })
     .run(function ($rootScope, $location, Analytics) {
