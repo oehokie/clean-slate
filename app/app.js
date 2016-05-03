@@ -19,17 +19,19 @@ angular
             })
             .state('login', {
                 url: '/login',
-                controller: 'AuthCtrl as authCtrl',
-                templateUrl: 'app/auth/login.html',
-                resolve: {
-                    requireNoAuth: function ($state, Auth) {
-                        return Auth.$requireAuth().then(function (auth) {
-                            $state.go('login');
-                        }, function (error) {
-                            return;
-                        });
-                    }
-                }
+                controller: 'AuthCtrl',
+                controllerAs: 'authCtrl',
+                templateUrl: 'app/auth/login.html'
+                // ,
+                // resolve: {
+                //     requireNoAuth: function ($state, Auth) {
+                //         return Auth.$requireAuth().then(function (auth) {
+                //             $state.go('login');
+                //         }, function (error) {
+                //             return;
+                //         });
+                //     }
+                // }
             // })
             // // .state('register', {
             // //     url: '/register',
