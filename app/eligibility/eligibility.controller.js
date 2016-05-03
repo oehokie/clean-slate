@@ -1,5 +1,5 @@
 (function () {
-    app.module('app', [])
+    app.module('cleanSlate')
         .controller("EligibiltyController", eligibilityController);
         
         function eligibilityController(

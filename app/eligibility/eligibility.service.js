@@ -1,4 +1,4 @@
-angular.module("app", [])
+angular.module("cleanSlate")
     .service("eligibilityService", function eligibilityService() {
         "use strict";
 

@@ -1,6 +1,7 @@
-angular.module("app", ["ui.router"])
+angular.module("cleanSlate", ["ui.router"])
     //Config
-    .config(function($stateProvider, $urlRouterProvider) {
+    .constant('FirebaseUrl', 'https://http://blazing-torch-1225.firebaseio.com/')
+    .config(function ($stateProvider, $urlRouterProvider) {
         "use strict";
 
         // Default location...
@@ -11,6 +12,16 @@ angular.module("app", ["ui.router"])
             .state("home", {
                 url: "/",
                 templateUrl: "app/home/home.html"
+            })
+            .state('login', {
+                url: '/login',
+                controller: 'AuthCtrl as authCtrl',
+                templateUrl: 'app/auth/login.html'
+            })
+            .state('register', {
+                url: '/register',
+                controller: 'AuthCtrl as authCtrl',
+                templateUrl: 'app/auth/register.html'
             })
             .state("acquire", {
                 url: "/acquire",
@@ -46,13 +57,13 @@ angular.module("app", ["ui.router"])
                 templateUrl: "app/contact/contact.html"
             });
     })
-    .run(function($rootScope, $location, Analytics) {
-      $rootScope.$on('$stateChangeSuccess', function() {
-        Analytics.recordPageview($location.url());
-      });
+    .run(function ($rootScope, $location, Analytics) {
+        $rootScope.$on('$stateChangeSuccess', function () {
+            Analytics.recordPageview($location.url());
+        });
     })
     //Controller
-    
+
     //After render directive so that jQuery for ReadClearly works
     .directive('afterRender', ['$timeout', function ($timeout) {
         var def = {
@@ -66,18 +77,18 @@ angular.module("app", ["ui.router"])
         console.log(def);
         return def;
     }])
-    .service('Analytics', function() {
+    .service('Analytics', function () {
 
-      this.recordPageview = function(url) {
-        ga('set', 'page', url);
-        ga('send', 'pageview');
-      };
+        this.recordPageview = function (url) {
+            ga('set', 'page', url);
+            ga('send', 'pageview');
+        };
 
-      this.recordEvent = function (category, action, label, value) {
-        var args = Array.prototype.slice.call(arguments);
-        args.unshift('event');
-        args.unshift('send');
-        ga.apply(ga, args);
-      };
+        this.recordEvent = function (category, action, label, value) {
+            var args = Array.prototype.slice.call(arguments);
+            args.unshift('event');
+            args.unshift('send');
+            ga.apply(ga, args);
+        };
 
     });
