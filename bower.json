@@ -1,0 +1,15 @@
+{
+  "name": "clean-slate",
+  "description": "**Please note that the v.1 code for Clean-Slate rests with CodeforDC, where it was originally developed and deployed by a truly, truly amazing team. As of March 16, 2016, all further development and deployment will happen from this repo, housed at MissionLaunch.",
+  "main": "index.js",
+  "license": "ISC",
+  "homepage": "https://github.com/oehokie/clean-slate",
+  "moduleType": [],
+  "dependencies": {
+    "angular": "^1.3.0",
+    "bootstrap": "3.3.4",
+    "angularfire": "~1.1.0",
+    "angular-ui-router": "~0.2.14",
+    "angular-md5": "~0.1.7"
+  }
+}

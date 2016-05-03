@@ -8,8 +8,6 @@ angular
   ])
     //Config
     .config(function ($stateProvider, $urlRouterProvider) {
-        "use strict";
-
         // Default location...
         $urlRouterProvider.otherwise("/");
 
