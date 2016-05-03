@@ -96,4 +96,4 @@ angular
         };
 
     })
-    .constant('FirebaseUrl', 'https://http://blazing-torch-1225.firebaseio.com/')
+    .constant('FirebaseUrl', 'https://blazing-torch-1225.firebaseio.com/')

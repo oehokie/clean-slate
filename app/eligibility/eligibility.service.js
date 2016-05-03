@@ -1,7 +1,7 @@
+"use strict";
+
 angular.module("cleanSlate")
     .service("eligibilityService", function eligibilityService() {
-        "use strict";
-
         this.userInput = [];
         this.answeredQuestions = [];
 
